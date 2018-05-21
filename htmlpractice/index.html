@@ -6,9 +6,20 @@
     </title>
 </head>    
 <body>
-        <form>
-            <input type="time" name="timeinput" min="1998-01-01" max="2050-01-01"/>
-            <input type="submit"/>
+        <form action="/home/kvsqashit/Practice/htmlpractice" method="POST" >
+          <fieldset>
+              <legend>Applicatin Form</legend>
+                  Full Name: <input type="text" name="fullname" required="required" placeholder="Enter your first name"  />
+                  Email Address: <input name="emailAddress" type="email" required="required" placeholder="Enter your E-mail address" />
+                  Website: <input name="Website" type="url" required="required" placeholder="Enter the website's URL here"  />            
+         
+            </fieldset>
+            <fieldset>
+                <legend>Approval</legend>
+                yes:<input type="radio" name="approval" value="true" checked="checked" />
+                no:<input type="radio" name="approval" value="false" />
+            </fieldset>
+            <input type="submit" value="enroll"  />
         </form>
     </body>
 </html>
