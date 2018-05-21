@@ -24,7 +24,12 @@ void create_node (node* p,int item)
 		p->right=newnode;
 		current=newnode;
 	}
-}
+}  
+
+
+
+
+
 void display_list(node* ptr)
 {	cout<<endl;
 	while(ptr!=NULL)
