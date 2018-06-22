@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+header, nav, footer {
+    flex: 1 100%;
+    padding: 20px 50px;
+}
+
+aside {
+    flex: 1 auto;
+    background-color: #5AADB0;
+    padding: 50px 20px;
+}
+
+section {
+    flex: 4 auto;
+    background-color: #5AADB0;
+    padding: 5px 10px;
+}
+
+article {
+    background-color: #5B8182;
+    padding: 50px;
+    margin: 5px 0px;
+}
+
+header {
+    background-color: #525454;
+    color: #3FCFD4;
+}
+
+nav {
+    background-color: #3FCFD4;
+    color: #525454;
+}
+
+footer {
+    background-color: #525454;
+    color: #3FCFD4;
+}
