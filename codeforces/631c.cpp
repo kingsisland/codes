@@ -1,3 +1,4 @@
+//incomplete
 #include <bits/stdc++.h>
 using namespace std;
 long long a[200005],asc[200005],des[200005],ans[200005];
@@ -13,9 +14,8 @@ int main()
 		asc[i]=a[i];
 		des[i]=a[i];
 	}
-	//sorting asc and des
-	sort(asc,asc+n);
-	sort(des,des+n);
+
+	
 	for (long long i = 0; i < m; ++i)
 	{
 		cin>>t[i];
@@ -52,6 +52,9 @@ int main()
 		break;	
 		
 	}
+	//sorting asc and des
+	// sort(asc,asc+fr[count-1]);
+	// sort(des,des+n);
 
 	cout<<"\n count: "<<count<<endl;
 	for (long long i = 0; i <count; ++i)
