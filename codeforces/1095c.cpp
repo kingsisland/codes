@@ -1,57 +1,55 @@
-//incomplete
-
 #include <bits/stdc++.h>
 using namespace std;
-vector <long> v,a,ans;
-
-long tem;
-
-void printvec(vector <long> a)
-{	cout<<"YES\n";
-	for (long i = 0; i < a.size(); ++i)
-	{
-		cout<<a[i]<<" ";
-	}
-}
-long block(long x)
-{
-	while(x>0)
-	{	
-		v.push_back(x%2);
-		x=x/2;
-	}
-	for (long i = 0; i < v.size(); ++i)
-	{
-		if (v[i]== 1)
-		{	tem=(long)pow(2,i);
-			a.push_back(tem);
-			
-		}
-	}
-	return a.size();
-
-}
+int n,k,t;
+map <int,int> res;
+queue <int> q;
 int main()
-{	long n,k;
+{	
 	cin>>n>>k;
-	long count=block(n);
-	if (n < k)
+	if(n&1)
 	{
-		cout<<"NO";
+		res[1]++;
 	}
-	else if(count == k)
-	{	
-		printvec(a);
-	}
-	else if(count < k)
+	for (int i = 1; i <= 30; ++i)
 	{
-		//basically divide an element of vector 'a' by 2, so that one element is split into two
-		//equal elements and the count increses by 2;
-		//Will have to find a easier way to do the splitting.	
-	}
+		if(n&(1<<i))
+		{	res[1<<i]++;
+			q.push(1<<i);
+		}
+	}	
 
-	
-
+	int count = res.size();
+	if (count > k)
+	 {
+	 	puts("NO");
+	 	return 0;
+	 }
+	 if (count < k)
+	  {
+	  	 while(count<k && !q.empty())
+	  	 {	t=q.front();
+	  	 	q.pop();
+	  	 	res[t]--;
+	  	 	if (t/2 > 1)
+	  	 	{
+	  	 		q.push(t/2);
+	  	 		q.push(t/2);
+	  	 	}
+	  	 	res[t/2]+=2;
+	  	 	count++;
+	  	 }
+	  	 if (count < k)
+	  	 {
+	  	 	puts("NO");
+	  	 	return 0;
+	  	 }
+	  }
+	  puts("YES");
+	 for(auto x : res)
+		for(int i = 0; i < x.second; i++)
+			printf("%d ", x.first);
+	puts("");
+	    
 
 
 	return 0;
