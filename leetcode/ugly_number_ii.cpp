@@ -15,7 +15,7 @@ public:
             int val_p3 = numbers[p3]*3;
             int val_p5 = numbers[p5]*5;
 
-            cout<<"val_p2 : "<<val_p2<<" val_p3 : "<<val_p3<<" val_p5: "<<val_p5<<endl;
+            //cout<<"val_p2 : "<<val_p2<<" val_p3 : "<<val_p3<<" val_p5: "<<val_p5<<endl;
 
             int min_val = min(val_p2, min(val_p3, val_p5));
             numbers[i] = min_val;
