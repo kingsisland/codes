@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Output files and input files
+output.txt
+
 # Compiled Object files
 *.slo
 *.lo
