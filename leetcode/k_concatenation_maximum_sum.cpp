@@ -8,7 +8,8 @@ public:
     	long long MOD = 1000000007;
         int n = arr.size();
         long long subarray_sum[n];
-        long long net_sum, max_sum =0, max_sum_0 = 0, l, r, r_end;
+        long long net_sum, max_sum =0;
+	long long int max_sum_0 = 0, l, r, r_end;
     
         // Filling the prefix sum aray
         subarray_sum[0] = arr[0];
@@ -30,6 +31,7 @@ public:
 	    }
         
         //cout<<"l : "<<l<<"  r: "<<r<<endl;
+	    
         if(max_sum == 0) return 0;
 
         net_sum = subarray_sum[n-1];
@@ -64,6 +66,7 @@ public:
        	}
 
        	// max_include >= max_sum
+	    
        	if(net_sum > 0)
    		{
    			max_include_next_array = (max_include_next_array%MOD + ((net_sum)*(k-2))%MOD)%MOD;
